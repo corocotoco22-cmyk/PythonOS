@@ -7,7 +7,7 @@
   <style>
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background-color: #121214; color: #e1e1e6; margin: 0; padding: 2rem; display: flex; flex-direction: column; align-items: center; }
-    .container { max-width: 800px; width: 100%; }
+    .container { max-width: 850px; width: 100%; }
     h1 { color: #00d26a; text-align: center; margin-bottom: 0.5rem; }
     p.subtitle { text-align: center; color: #a8a8b3; margin-bottom: 2rem; }
     .search-box { width: 100%; padding: 0.8rem 1.2rem; font-size: 1rem; border-radius: 8px; border: 1px solid #29292e; background-color: #202024; color: #fff; margin-bottom: 1.5rem; outline: none; }
@@ -19,11 +19,13 @@
     .version-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
     .version-title { font-size: 1.1rem; font-weight: bold; color: #fff; }
     .version-badge { font-size: 0.75rem; background-color: #29292e; color: #00d26a; padding: 0.3rem 0.8rem; border-radius: 12px; }
-    .bundle-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-    .btn-download { background-color: #00d26a; color: #09090a; text-decoration: none; font-weight: bold; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; transition: background-color 0.2s; }
+    .bundle-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .btn-download { background-color: #00d26a; color: #09090a; text-decoration: none; font-weight: bold; padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 0.85rem; transition: background-color 0.2s; }
     .btn-download:hover { background-color: #00b359; }
     .btn-build { background-color: #3b82f6; color: #fff; }
     .btn-build:hover { background-color: #2563eb; }
+    .btn-req { background-color: #8b5cf6; color: #fff; }
+    .btn-req:hover { background-color: #7c3aed; }
     .btn-secondary { background-color: #29292e; color: #e1e1e6; }
     .btn-secondary:hover { background-color: #323238; color: #fff; }
     .no-packages, .no-results { text-align: center; color: #737380; margin-top: 2rem; font-size: 1.1rem; }
@@ -42,12 +44,13 @@
         
         <div class="version-card" data-version="1.0.0">
           <div class="version-header">
-            <span class="version-title">pythonOS v1.0.0</span>
+            <span class="version-title">PythonOS v1.0.0</span>
             <span class="version-badge">Releases Recentes</span>
           </div>
           <div class="bundle-links">
             <a href="build.py" download class="btn-download btn-build">Baixar build.py</a>
-            <a href="versions/PythonOS_1.0.0.py" download class="btn-download">Baixar pythonOS (1.0.0)</a>
+            <a href="requirements.txt" download class="btn-download btn-req">Baixar requirements.txt</a>
+            <a href="versions/PythonOS_1.0.0.py" download class="btn-download">Baixar PythonOS (1.0.0)</a>
             <a href="versions/PyGUI_1.0.0.py" download class="btn-download btn-secondary">Baixar Biblioteca PyGUI</a>
           </div>
         </div>
@@ -76,9 +79,8 @@
         }
       });
 
-      // Oculta secções que fiquem vazias após o filtro
       sections.forEach(sec => {
-        const visiveisNaSecao = sec.querySelectorAll('.version-card[style*="block"], .version-card:not([style*="none"])').length;
+        const visiveisNaSecao = sec.querySelectorAll('.version-card:not([style*="display: none"])').length;
         sec.style.display = visiveisNaSecao > 0 ? 'block' : 'none';
       });
 
