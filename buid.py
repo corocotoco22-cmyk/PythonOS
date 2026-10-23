@@ -33,7 +33,7 @@ def gerar_index():
     }
     
     for f in ficheiros:
-        match = re.match(r"pythonOS_(.+)\.py$", f, re.IGNORECASE)
+        match = re.match(r"PythonOS_(.+)\.py$", f, re.IGNORECASE)
         if match:
             versao = match.group(1)
             cat = categorizar_versao(versao)
@@ -67,7 +67,7 @@ def gerar_index():
                 
             cards_cat = ""
             for v in lista_v:
-                arq_pythonos = f"pythonOS_{v}.py"
+                arq_pythonos = f"PythonOS_{v}.py"
                 arq_pygui = f"PyGUI_{v}.py"
                 
                 # Fallback para o PyGUI caso o exato não exista
