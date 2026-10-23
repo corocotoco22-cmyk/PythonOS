@@ -36,7 +36,24 @@
     <input type="text" id="searchInput" class="search-box" placeholder="Pesquisar versão (ex: 1.0.0, beta, rc)..." onkeyup="filtrarVersoes()">
     
     <div id="contentList">
-      <div class="no-packages">Ops, desculpe, não tem nenhum pacote disponível para baixar.</div>
+      
+      <div class="category-section">
+        <h2 class="category-title">🚀 Releases Recentes</h2>
+        
+        <div class="version-card" data-version="1.0.0">
+          <div class="version-header">
+            <span class="version-title">pythonOS v1.0.0</span>
+            <span class="version-badge">Releases Recentes</span>
+          </div>
+          <div class="bundle-links">
+            <a href="build.py" download class="btn-download btn-build">Baixar build.py</a>
+            <a href="versions/PythonOS_1.0.0.py" download class="btn-download">Baixar pythonOS (1.0.0)</a>
+            <a href="versions/PyGUI_1.0.0.py" download class="btn-download btn-secondary">Baixar Biblioteca PyGUI</a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="no-results" id="noResults" style="display: none;">Nenhuma versão encontrada para a sua pesquisa.</div>
